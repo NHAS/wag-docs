@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: What is Wag?
-      link: /guide/what-is-wag
+      link: /what-is-wag
     - theme: alt
       text: Quickstart
       link: /guide/getting-started

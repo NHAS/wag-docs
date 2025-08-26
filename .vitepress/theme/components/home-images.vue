@@ -12,12 +12,12 @@ export default {
 	data() {
 		return {
 			images: [
-				{ src: '/image/slideshow/dashboard.png', color: '#0d0e0e' },
-				{ src: '/image/slideshow/registration.png', color: '#161718' },
-				{ src: '/image/slideshow/rules.png', color: '#161718' },
-				{ src: '/image/slideshow/totp.png', color: '#161718' },
-				{ src: '/image/slideshow/user_management_registered.png', color: '#161718' },
-				{ src: '/image/slideshow/user_ui.png', color: '#161718' },
+				{ src: '/images/slideshow/dashboard.png', color: '#0d0e0e' },
+				{ src: '/images/slideshow/registration.png', color: '#161718' },
+				{ src: '/images/slideshow/rules.png', color: '#161718' },
+				{ src: '/images/slideshow/totp_mfa.png', color: '#161718' },
+				{ src: '/images/slideshow/user_management_registered.png', color: '#161718' },
+				{ src: '/images/slideshow/user_ui.png', color: '#161718' },
 
 
 			],

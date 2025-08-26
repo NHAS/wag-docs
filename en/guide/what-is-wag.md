@@ -22,17 +22,17 @@ It also adds a number of helpful features to enable in-depth automation.
 
 ### Administrative UI
 <div style="display: grid; gap: 15px;">
-  <a href="/image/slideshow/dashboard.png" target="_blank">
-    <img src="/image/slideshow/dashboard.png" height="967" width="1419" alt="Dashboard showing panels and log messages" /> 
+  <a href="/images/slideshow/dashboard.png" target="_blank">
+    <img src="/images/slideshow/dashboard.png" height="967" width="1419" alt="Dashboard showing panels and log messages" /> 
   </a>
-  <a href="/image/slideshow/user_management.png" target="_blank">
-    <img src="/image/slideshow/user_management.png" height="967" width="1419" alt="User management table" /> 
+  <a href="/images/slideshow/user_management.png" target="_blank">
+    <img src="/images/slideshow/user_management.png" height="967" width="1419" alt="User management table" /> 
   </a>
-  <a href="/image/slideshow/registration.png" target="_blank">
-    <img src="/image/slideshow/registration.png" height="967" width="1419" alt="Registration token creation" /> 
+  <a href="/images/slideshow/registration.png" target="_blank">
+    <img src="/images/slideshow/registration.png" height="967" width="1419" alt="Registration token creation" /> 
   </a>
-  <a href="/image/slideshow/rules.png" target="_blank">
-    <img src="/image/slideshow/rules.png" height="967" width="1419" alt="Defining custom route rules" /> 
+  <a href="/images/slideshow/rules.png" target="_blank">
+    <img src="/images/slideshow/rules.png" height="967" width="1419" alt="Defining custom route rules" /> 
   </a>
 </div>
 

@@ -41,6 +41,17 @@ Define your config as `config/config.json`:
             "ExternalAddress": "registartion.example.com",
             "DownloadConfigFileName": "wg0.conf"
         },
+        "Clustering": {
+          "ClusterState": "new",
+          "DatabaseLocation": "/data",
+          "ETCDLogLevel": "error",
+          "ListenAddresses": [
+              "https://127.0.0.1:2380"
+          ],
+          "TLSManagerListenURL": "https://127.0.0.1:3434",
+          "TLSManagerStorage": "/data/"
+
+        },
         "Management": {
             "Enabled": true,
             "ListenAddress": "wag:4433",
@@ -77,7 +88,7 @@ services:
     cap_add:
       - NET_ADMIN
     ports:
-      - '4433:4433/tcp'   # Admin page
+      - '127.0.0.1:4433:4433/tcp'   # Admin page
       - '8081:8081/tcp'   # Public registration
       - '53230:53230/udp' # WireGuard port
     volumes:
@@ -92,7 +103,77 @@ services:
 sudo docker compose up -d
 ```
 
-On first run Wag will generate an administrative user that you can then log in to. 
+On first run Wag will generate an administrative user that you can then log in to, e.g:
+```sh
+2025/08/26 13:21:26 [ADMINUI] *************** Web interface enabled but no administrator users exist, generating new ones CREDENTIALS FOLLOW ***************
+2025/08/26 13:21:26 [ADMINUI] Username:  766cbc6ac35c0055
+2025/08/26 13:21:26 [ADMINUI] Password:  c9c5671d441cbc2a09c644449ddc3f98
+```
+
+
+## Adding your first User
+
+Login to the management portal, click on "Registration Tokens":
+
+![Registration Token Input](/images/getting-started/registration-creation.png)
+
+
+Add in your username:
+
+![Registration Token creation with username](/images/getting-started/registration-tokens.png)
+
+
+For the purposes of this example, we are just going to curl the key, which triggers the user and device creation.
+
+```sh
+curl http://127.0.0.1:8081/register_device\?key\=fe43b624b5a8aefd17dce1f21ff6485a2bec282b8dae7f0dfe7b006b58b009a4
+```
+
+Resulting wireguard INI:
+```sh
+[Interface]
+PrivateKey = 4PATAK4SQlWRdjxoCgWE39zdfEdXuwh4vHbOvfBs730=
+Address = 192.168.122.2
+
+[Peer]
+Endpoint =  192.168.121.61:53230
+PresharedKey = iuEEblu0D9DhV1f82oVdhyoomFsDOfuC9wzlD3Vo1oo=
+PublicKey = z2maXX7i3j1B88qjKMT6NBf40iZ7vo6Rfsw5v989zE8=
+AllowedIPs = 192.168.122.1/32
+PersistentKeepAlive = 10
+```
+
+
+Now if you browse to users or devices, you can see they are populated with one user! 
+![Users table](/images/getting-started/users-page.png)
+
+![Devices table](/images/getting-started/devices-page.png)
+
+## Defining your first rule
+
+Browse to "Rules" and click "Add Rule":
+
+In this example we are creating a rule that effects the "all" group, a special group that all users and groups belong to (note the `*`). 
+
+![First rule](/images/getting-started/rule-modal.png)
+
+On your wireguard client, you can now query the `/api/status` to show how the changes propagate. 
+
+```sh
+curl http://vpn.example.com/api/status
+```
+
+## Onwards!
+
+Your wag instance should now be setup and working
+
+::: tip Good Next Steps
+- Configuring MFA
+- Learning Wag ACL rules
+- Working with Client API
+- Debugging and Diagnostics
+- Clustering
+:::
 
 
 ## Configuration
@@ -123,7 +204,7 @@ Wag uses a powerful policy system to control access to network resources:
 
 ### Policy Rules
 
-::: details Rule Precedence
+::: warning Rule Precedence
 Rules use subnet prefix length to determine precedence. **More specific matches override general rules**.
 
 Example: If `10.0.0.0/16` requires MFA but `10.0.1.1/32` is in the Allow list, users can access `10.0.1.1` without MFA.
@@ -131,11 +212,11 @@ Example: If `10.0.0.0/16` requires MFA but `10.0.1.1/32` is in the Allow list, u
 
 #### Rule Types
 
-| Rule Type | Description | Example |
-|-----------|-------------|---------|
-| **Mfa** | Requires authentication | `"192.168.1.0/24"` |
-| **Allow** | Public access | `"8.8.8.8"` |
-| **Deny** | Blocked access | `"10.0.0.5/32"` |
+| Rule Type | Description | 
+|-----------|-------------|
+| **Mfa** | Requires authentication | 
+| **Allow** | Public access | 
+| **Deny** | Blocked access | 
 
 #### Port & Protocol Rules
 
@@ -149,22 +230,6 @@ Example: If `10.0.0.0/16` requires MFA but `10.0.1.1/32` is in the Allow list, u
   ]
 }
 ```
-
-## Web Interfaces
-
-### Public Registration Portal
-- **Purpose**: Device enrollment and registration
-- **Default Port**: 8081
-- **Access**: Public-facing for new device setup
-
-### Management Interface
-- **Purpose**: Administrative control and user management
-- **Default Port**: 4433
-- **Access**: Restricted to administrators
-
-::: warning Security Notice
-The management interface should **never** be publicly exposed. Use SSH forwarding or restrict to localhost.
-:::
 
 ## Device Management
 
@@ -216,62 +281,4 @@ Wag supports clustering for production deployments:
 Use the `-join` flag when starting additional nodes to join an existing cluster.
 :::
 
-## Authentication Methods
 
-### Supported Methods
-- **TOTP** - Time-based one-time passwords
-- **WebAuthn** - Security keys and biometrics  
-- **OIDC** - Single sign-on integration
-- **PAM** - System authentication
-
-### OIDC Configuration
-
-```json
-{
-  "OIDC": {
-    "IssuerURL": "https://auth.example.com",
-    "ClientID": "wag-client",
-    "ClientSecret": "your-secret",
-    "GroupsClaimName": "groups"
-  }
-}
-```
-
-## Use Cases
-
-### Corporate VPN
-- Employees access internal resources with MFA
-- Public services (internet) remain unrestricted
-- Fine-grained access based on user groups
-
-### Site-to-Site Connections  
-- Secure connections between office locations
-- Route-specific authentication requirements
-- Centralized access control
-
-### Zero-Trust Architecture
-- All internal resources require authentication
-- Device-based access policies
-- Real-time access revocation
-
-## Contributing
-
-We welcome contributions! Please ensure your changes include tests where possible.
-
-::: info Getting Started
-1. Check existing `_test.go` files for testing examples
-2. Write tests for new features
-3. Open a pull request for discussion
-:::
-
-## Support
-
-If Wag supports your workflow, consider supporting the project through donations. Details available in the project repository.
-
----
-
-::: tip Next Steps
-- Review the [example configuration](https://github.com/NHAS/wag/blob/main/example_config.json)
-- Set up your first deployment with Docker Compose
-- Configure access policies for your organization
-:::
