@@ -102,9 +102,9 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 				{
 
 					text: 'API', collapsed: true, items: [
-						{ text: 'Public Endpoint', link: '/notifications/generic' },
-						{ text: 'Tunnel/Client', link: '/notifications/generic' },
-						{ text: 'Management', link: '/notifications/generic' },
+						{ text: 'Public Endpoint', link: 'api/public.md' },
+						{ text: 'Tunnel/Client', link: 'api/tunnel.md' },
+						{ text: 'Management', link: 'api/management.md' },
 					],
 				},
 
