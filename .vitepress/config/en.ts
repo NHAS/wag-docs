@@ -61,24 +61,25 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 			],
 		},
 		{
-			text: 'Installation',
-			collapsed: false,
-			items: [
-				{ text: 'Wag', link: 'hub-installation' },
-				{ text: 'Client Deployment', link: 'agent-installation' },
-			],
-		},
-		{
 			text: 'Guides',
 			collapsed: false,
 			items: [
-				{ text: 'Basic Operations', link: 'additional-disks' },
-				{ text: 'Access Control (ACLs)', link: 'compiling' },
-				{ text: 'Choosing MFA', link: 'compiling' },
 				{ text: 'Configuring SSO', link: 'compiling' },
-				{ text: 'Clustering', link: 'compiling' },
-				{ text: 'Errors & Events', link: 'compiling' },
 				{ text: 'Using a Reverse Proxy', link: 'compiling' },
+				{ text: 'Setting up Automation', link: 'compiling' },
+
+			],
+		},
+		{
+			text: 'Resources',
+			collapsed: false,
+			items: [
+				{ text: 'MFA', link: 'compiling' },
+				{ text: 'Client API', link: 'compiling' },
+
+				{ text: 'Access Control (ACLs)', link: 'access-control.md' },
+				{ text: 'High Availability', link: 'clustering.md' },
+
 			],
 		},
 		{
@@ -87,13 +88,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 			items: [
 				{ text: 'Common Issues', link: 'common-issues' },
 				{ text: 'Docker', link: 'docker-shell.md' },
-				{
-					text: 'Admin Tools', collapsed: true, items: [
-						{ text: 'Generic', link: '/notifications/generic' },
-
-					]
-				},
-
+				{ text: 'Admin Tools', link: 'docker-shell.md' },
 			],
 		},
 		{
@@ -101,17 +96,18 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 			text: 'Reference',
 			collapsed: false,
 			items: [
-				{ text: 'Configuration file', link: 'serve-on-subpath' },
-				{ text: 'CLI', link: 'serve-on-subpath' },
+				{ text: 'CLI', link: 'cli-reference.md' },
+				{ text: 'Webhooks', link: 'serve-on-subpath' },
+				{ text: 'Configuration file', link: 'configuration-file.md' },
 				{
 
 					text: 'API', collapsed: true, items: [
-						{ text: 'Registration', link: '/notifications/generic' },
-						{ text: 'Tunnel', link: '/notifications/generic' },
+						{ text: 'Public Endpoint', link: '/notifications/generic' },
+						{ text: 'Tunnel/Client', link: '/notifications/generic' },
 						{ text: 'Management', link: '/notifications/generic' },
 					],
-
 				},
+
 			],
 		}
 	]

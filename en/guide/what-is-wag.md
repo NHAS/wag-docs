@@ -38,14 +38,14 @@ It also adds a number of helpful features to enable in-depth automation.
 
 ### User UI
 <div style="display: grid; gap: 15px;">
-  <a href="/image/slideshow/totp_mfa.png" target="_blank">
-    <img src="/image/slideshow/totp_mfa.png" height="967" width="1419" alt="Code based MFA UI" /> 
+  <a href="/images/slideshow/totp_mfa.png" target="_blank">
+    <img src="/images/slideshow/totp_mfa.png" height="967" width="1419" alt="Code based MFA UI" /> 
   </a>
-  <a href="/image/slideshow/user_ui.png" target="_blank">
-    <img src="/image/slideshow/user_ui.png" height="967" width="1419" alt="A successful user login" /> 
+  <a href="/images/slideshow/user_ui.png" target="_blank">
+    <img src="/images/slideshow/user_ui.png" height="967" width="1419" alt="A successful user login" /> 
   </a>
-  <a href="/image/slideshow/user_ui_locked.png" target="_blank">
-    <img src="/image/slideshow/user_ui_locked.png" height="967" width="1419" alt="A locked user" /> 
+  <a href="/images/slideshow/user_ui_locked.png" target="_blank">
+    <img src="/images/slideshow/user_ui_locked.png" height="967" width="1419" alt="A locked user" /> 
   </a>
 </div>
 
