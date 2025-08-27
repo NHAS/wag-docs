@@ -64,8 +64,8 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 			text: 'Guides',
 			collapsed: false,
 			items: [
-				{ text: 'Configuring SSO', link: 'compiling' },
-				{ text: 'Using a Reverse Proxy', link: 'compiling' },
+				{ text: 'Configuring SSO', link: 'sso.md' },
+				{ text: 'Using a Reverse Proxy', link: 'reverse-proxy.md' },
 				{ text: 'Setting up Automation', link: 'compiling' },
 
 			],
