@@ -83,7 +83,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 						{ text: 'SSO', link: 'sso.md' },
 					],
 				},
-				{ text: 'Client API', link: 'compiling' },
+				{ text: 'Client API', link: 'client-api-soft.md' },
 
 				{ text: 'Access Control (ACLs)', link: 'access-control.md' },
 				{ text: 'High Availability', link: 'clustering.md' },
