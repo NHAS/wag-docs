@@ -46,17 +46,17 @@ Then click on your created client (in this case `account`) and go to settings:
 
 4. Add a mapper: `By configuration`
     <div style="text-align:center">   
-    <img src="/images/sso/client_scopes_mapper.png" alt="Add mapper" class="shadow">
+    <img src="/images/sso/client_scopes_mapper.png"  class="shadow">
     </div>
 
 5. Choose the `Group Membership` mapper
     <div style="text-align:center">   
-    <img src="/images/sso/client_scopes_group_mapper.png" alt="Add mapper" class="shadow">
+    <img src="/images/sso/client_scopes_group_mapper.png"  class="shadow">
     </div>
 
 6. Set `Name` and `Token Claim Name` to `groups` (or whatever group name you want, update the wag config file if not groups) disable `Full group path`:
     <div style="text-align:center">   
-    <img src="/images/sso/set_token_claims.png" alt="Add mapper" class="shadow">
+    <img src="/images/sso/set_token_claims.png"  class="shadow">
     </div>
 
 7. Get `ClientID` and `Client Secret` from `Credentials`

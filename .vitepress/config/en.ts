@@ -74,7 +74,15 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 			text: 'Resources',
 			collapsed: false,
 			items: [
-				{ text: 'MFA', link: 'compiling' },
+				{
+
+					text: 'MFA', collapsed: true, items: [
+						{ text: 'TOTP', link: 'mfa/totp.md' },
+						{ text: 'Security Key', link: 'mfa/securitykey.md' },
+						{ text: 'PAM', link: 'mfa/pam.md' },
+						{ text: 'SSO', link: 'sso.md' },
+					],
+				},
 				{ text: 'Client API', link: 'compiling' },
 
 				{ text: 'Access Control (ACLs)', link: 'access-control.md' },
