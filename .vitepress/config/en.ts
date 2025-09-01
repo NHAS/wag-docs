@@ -86,7 +86,6 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 			text: 'Troubleshooting',
 			collapsed: false,
 			items: [
-				{ text: 'Common Issues', link: 'common-issues' },
 				{ text: 'Docker', link: 'docker-shell.md' },
 				{ text: 'Admin Tools', link: 'docker-shell.md' },
 			],
@@ -97,7 +96,6 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 			collapsed: false,
 			items: [
 				{ text: 'CLI', link: 'cli-reference.md' },
-				{ text: 'Webhooks', link: 'serve-on-subpath' },
 				{ text: 'Configuration file', link: 'configuration-file.md' },
 				{
 
