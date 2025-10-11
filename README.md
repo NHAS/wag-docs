@@ -12,7 +12,7 @@ npm i
 ### Start dev server
 
 ```bash
-npm dev
+npm run dev
 ```
 
 ### Build

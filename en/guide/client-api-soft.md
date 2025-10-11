@@ -13,4 +13,4 @@ However you may want to just restrict your users down to what the wag gateway is
 In that case unfortunately you will have to write that automation yourself.
 
 
-[To see the full reference, click me](api/public)
+[Full reference](api/tunnel)

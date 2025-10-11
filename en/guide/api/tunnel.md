@@ -17,7 +17,7 @@ This endpoint returns the server public wireguard key.
 
 Return JSON object representing user authorisation status and mfa/allow/denied routes. 
 
-State Object Schema (v9.0.0):
+State Object Schema (v9.1.4):
 ```json
 {
 	"IsAuthorised": "bool",

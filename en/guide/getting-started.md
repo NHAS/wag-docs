@@ -4,9 +4,6 @@ For background information, see the [What is Wag?](./what-is-wag.md) page.
 
 ## Installation
 
-The fastest way to get started with Wag:
-
-
 Create your directories:
 ```sh
 mkdir data
@@ -166,15 +163,6 @@ curl http://vpn.example.com/api/status
 ## Onwards!
 
 Your wag instance should now be setup and working
-
-::: tip Good Next Steps
-- Configuring MFA
-- Learning Wag ACL rules
-- Working with Client API
-- Debugging and Diagnostics
-- Clustering
-:::
-
 
 
 
