@@ -1,6 +1,7 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import pkg from '../../package.json'
 
+
 export const en = defineConfig({
 	lang: 'en-US',
 	description: 'MFA, Management and Automation',
@@ -66,7 +67,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 			items: [
 				{ text: 'Configuring SSO', link: 'sso.md' },
 				{ text: 'Using a Reverse Proxy', link: 'reverse-proxy.md' },
-				{ text: 'Setting up Automation', link: 'compiling' },
+				{ text: 'Setting up Automation', link: 'automation.md' },
 
 			],
 		},
@@ -88,14 +89,6 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 				{ text: 'Access Control (ACLs)', link: 'access-control.md' },
 				{ text: 'High Availability', link: 'clustering.md' },
 
-			],
-		},
-		{
-			text: 'Troubleshooting',
-			collapsed: false,
-			items: [
-				{ text: 'Docker', link: 'docker-shell.md' },
-				{ text: 'Admin Tools', link: 'docker-shell.md' },
 			],
 		},
 		{
