@@ -65,7 +65,6 @@ Then click on your created client (in this case `account`) and go to settings:
 
 
 
-
 ### Web UI
 
 Go to `Settings` -> `Authentication`, enable `Single Sign On`
