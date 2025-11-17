@@ -32,4 +32,4 @@ ExposePorts: ["80/tcp", "443/tcp"]
 ## Recommendations
 Set the `Webserver.Public.ListenAddress` to `localhost:port`, so that you can then expose it via your reverse proxy.  
 
-The MFA, or tunnel web listener (`Webserver.Tunnel.Port`) will not have an associated `iptables` rule to expose it when `NumberProxies` is greate than 0. 
+The MFA, or tunnel web listener (`Webserver.Tunnel.Port`) will not have an associated `iptables` rule to expose it when `NumberProxies` is greater than 0. 
