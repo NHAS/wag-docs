@@ -16,52 +16,45 @@ Define your config as `config/config.json`:
     "NAT": true,
     "Webserver": {
         "Lockout": 5,
-
         "Tunnel": {
             "Domain": "vpn.example.com",
             "Port": "8080",
-
             "MaxSessionLifetimeMinutes": 480,
             "SessionInactivityTimeoutMinutes": 60,
-
             "HelpMail": "help@example.com",
-
             "DefaultMethod": "totp",
             "Issuer": "vpn.example.com",
             "Methods": [
                 "totp"
             ]
         },
-
         "Public": {
             "ListenAddress": "wag:8081",
             "ExternalAddress": "registartion.example.com",
             "DownloadConfigFileName": "wg0.conf"
-        },
-        "Clustering": {
-          "ClusterState": "new",
-          "DatabaseLocation": "/data",
-          "ETCDLogLevel": "error",
-          "ListenAddresses": [
-              "https://127.0.0.1:2380"
-          ],
-          "TLSManagerListenURL": "https://127.0.0.1:3434",
-          "TLSManagerStorage": "/data/"
-
         },
         "Management": {
             "Enabled": true,
             "ListenAddress": "wag:4433",
             "Password": {
                 "Enabled": true
-            },
+            }
         }
     },
-
+    "Clustering": {
+        "ClusterState": "new",
+        "DatabaseLocation": "/data",
+        "ETCDLogLevel": "error",
+        "ListenAddresses": [
+            "https://127.0.0.1:2380"
+        ],
+        "TLSManagerListenURL": "https://127.0.0.1:3434",
+        "TLSManagerStorage": "/data/"
+    },
     "Wireguard": {
         "DevName": "wg0",
         "ListenPort": 53230,
-        "PrivateKey": "<REPLACE_ME>",
+        "PrivateKey": "GOHcDwwG2mxp6TWSIrOxQneqUXpmmWKKqhhwx2eH6EE=",
         "Address": "192.168.122.1/24",
         "ServerPersistentKeepAlive": 0
     }
